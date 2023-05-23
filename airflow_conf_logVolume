@@ -205,8 +205,11 @@ logs:
   persistence:
     enabled: true
 
-    ## the name of your existing PersistentVolumeClaim
-    existingClaim: my-logs-pvc
+    ## NOTE: set `storageClass` to "" for the cluster-default
+    storageClass: "azurefile-csi"
+    
+    ## NOTE: some types of StorageClass will ignore this request (for example, EFS)
+    size: 1Gi
     
     ## WARNING: as multiple pods will write logs, this MUST be ReadWriteMany
     accessMode: ReadWriteMany

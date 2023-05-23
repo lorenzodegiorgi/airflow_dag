@@ -17,7 +17,7 @@ with DAG(
         cmds=["sh", "-c", "mkdir -p /airflow/xcom/;echo '[1,2,3,4]' > /airflow/xcom/return.json"],
         name="write-xcom",
         do_xcom_push=True,
-        is_delete_operator_pod=True,
+        is_delete_operator_pod=False,
         in_cluster=True,
         task_id="write-xcom",
         get_logs=True,

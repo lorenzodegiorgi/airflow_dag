@@ -200,7 +200,7 @@ flower:
 ###################################
 logs:
   ## NOTE: this is the default value
-  path: /opt/airflow/logs
+  path: logs
   
   persistence:
     enabled: true

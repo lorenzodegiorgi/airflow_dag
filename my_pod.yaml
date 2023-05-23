@@ -12,7 +12,12 @@ spec:
       volumeMounts:
         - name: my-volume
           mountPath: /usr/share/nginx/html
+        - name: my-log
+          mountPath: /mnt
   volumes:
     - name: my-volume
       persistentVolumeClaim:
-        claimName: <nomepvc>
+        claimName: airflow-cluster-dags
+    - name: my-log
+      persistentVolumeClaim:
+        claimName: airflow-cluster-logs

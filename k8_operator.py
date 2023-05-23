@@ -2,6 +2,8 @@ from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import Kubernete
 from datetime import datetime
 from airflow.models import DAG
 from airflow.operators.python import PythonOperator
+from airflow.operators.bash import BashOperator
+
 
 with DAG(
     dag_id='k8s_dag',

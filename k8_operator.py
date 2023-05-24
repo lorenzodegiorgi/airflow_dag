@@ -12,7 +12,7 @@ with DAG(
     catchup=False
 ) as dag:
     write_xcom = KubernetesPodOperator(
-        namespace="default",
+        namespace="airflow-cluster",
         image="alpine",
         cmds=["sh", "-c", "mkdir -p /airflow/xcom/;echo '[1,2,3,4]' > /airflow/xcom/return.json"],
         name="write-xcom",

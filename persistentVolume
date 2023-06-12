@@ -1,0 +1,25 @@
+# PersistentVolume per deployment on on-prem cluster
+# Ricordati di dare tutti i permessi alla folder su TUTTI i NODI
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: persistent-volume
+  labels:
+    type: local
+spec:
+  storageClassName: pv-demo
+  capacity:
+    storage: 8Gi
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  hostPath:
+    path: "/home/lorenzo/persistentVolume"
+
+
+
+
+
+
+
+

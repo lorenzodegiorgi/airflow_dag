@@ -14,7 +14,7 @@ with DAG(
     write_xcom = KubernetesPodOperator(
         namespace="airflow-cluster",
         image="alpine",
-        cmds=["sh", "-c", "mkdir -p /airflow/xcom/;echo '[1,2,3,4]' > /airflow/xcom/return.json"],
+        cmds=["sh", "-c", "echo "Hello Word"; mkdir -p /airflow/xcom/;echo '[1,2,3,4]' > /airflow/xcom/return.json"],
         name="write-xcom",
         do_xcom_push=True,
         is_delete_operator_pod=False,
